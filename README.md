@@ -2,6 +2,15 @@
 
 Three runnable Spring Boot 3.4 / Java 21 POCs covering the hard parts of SaaS subscription billing. Each module ships with a polished HTML UI served on the same port as its REST API.
 
+## Documentation map
+
+| Doc | What it answers |
+|-----|-----------------|
+| **[ISSUE.md](ISSUE.md)** | Why these POCs exist — the business problem and the five money-safety invariants (I1–I5) every module protects. |
+| **[TECHNICAL.md](TECHNICAL.md)** | Per-POC deep dive: the hard problem, what we protect, solution shape, key tech **by responsibility**, how each sub-problem is solved, and tech debt to acknowledge. |
+| **[CONSISTENCY.md](CONSISTENCY.md)** | What must change to run this correctly behind a Kubernetes Deployment (N pods) or a VM fleet — exactly-once batch, DB-enforced idempotency, locks, outbox. |
+| **[docs/overview.html](docs/overview.html)** | Self-contained interactive walkthrough of the three flows, the state machine, and the consistency model (with live proration + tier-pricing calculators). Open directly in a browser. |
+
 | Module | Port | Topic | UI |
 |--------|------|-------|----|
 | `proration-engine-poc` | 8081 | Mid-cycle plan upgrade/downgrade/cancel, credit balance, no-cash-refund policy | http://localhost:8081/ |
